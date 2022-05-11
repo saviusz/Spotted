@@ -1,12 +1,11 @@
 import puppeteer from "puppeteer";
-import fetch from 'node-fetch';
-import {VM} from 'vm2';
-import moment from 'moment';
 
-import { minimal_args, replaceParenthesis, standardFormat } from "./utils";
+import { minimal_args } from "./utils";
+import generateFromTemplate from "../../html-generator";
+import { FormData } from '../../common/models/FormData';
+
 
 const browser = puppeteer.launch({ args: minimal_args })
-moment.locale("pl")
 
 
 interface IOutputOptions {
@@ -15,7 +14,7 @@ interface IOutputOptions {
     darkMode: false
 }
 
-export default async function (template: string, substitutes: object, options: IOutputOptions) {
+export default async function (template: string, substitutes: FormData, options: IOutputOptions) {
     const page = await (await browser).newPage();
 
     await page.setViewport({
@@ -30,24 +29,7 @@ export default async function (template: string, substitutes: object, options: I
         }]
     )
 
-    const vm = new VM({
-        sandbox: {
-            date: (format: string) => moment().format(format),
-            ...substitutes
-        },
-        timeout: 20
-    })
-
-    let html = await (await fetch(template)).text();
-
-    html = replaceParenthesis(html, (match) => {
-        try {
-            return vm.run(match)
-        } catch (error) {
-            console.warn(error)
-            return match
-        }
-    });
+    const html = await generateFromTemplate(template, substitutes);
 
     await page.goto(`data:text/html,${encodeURIComponent(html)}`);
     
