@@ -1,0 +1,23 @@
+{
+  "name": "imagerenderer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "install": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.29.3",
+    "node-fetch": "^2.6.7",
+    "puppeteer": "^14.0.0",
+    "vm2": "^3.9.9"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.6.1",
+    "typescript": "^4.6.4"
+  }
+}
