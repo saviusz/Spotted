@@ -1,0 +1,24 @@
+{
+  "name": "ig-agent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main.js",
+  "types": "dist/ig-agent/src/main.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "install": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "file-type": "^17.1.1",
+    "instagram-private-api": "^1.45.3",
+    "node-ipc": "^9.2.0",
+    "re2": "^1.17.4"
+  },
+  "devDependencies": {
+    "@types/node-ipc": "^9.2.0",
+    "typescript": "^4.6.2"
+  }
+}
