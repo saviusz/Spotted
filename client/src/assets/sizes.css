@@ -1,0 +1,10 @@
+:root{
+    --size--interactive: 12mm;
+
+    --margin--small: 5px;
+    --margin--normal: 10px;
+    --margin--big: 20px;
+    --margin--large: 40px;
+
+    --radius: .4em;
+}

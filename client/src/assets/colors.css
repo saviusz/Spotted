@@ -1,0 +1,67 @@
+:root {
+  --color-base--white-pure: #ffffff;
+  --color-base--white: #ffffff;
+  --color-base--white-soft: #ffffff;
+  --color-base--white-mute: #ffffff;
+
+  --color-base--gray-light-1: #e6e6e6;
+  --color-base--gray-light-2: hsl(0, 0%, 80%);
+  --color-base--gray-light-3: hsl(0, 0%, 70%);
+  --color-base--gray-light-4: hsl(0, 0%, 60%);
+  --color-base--gray: hsl(0, 0%, 50%);
+  --color-base--gray-dark-4: hsl(0, 0%, 40%);
+  --color-base--gray-dark-3: hsl(0, 0%, 30%);
+  --color-base--gray-dark-2: hsl(0, 0%, 20%);
+  --color-base--gray-dark-1: hsl(0, 0%, 10%);
+
+  --color-base--black-pure: hsl(0, 0%, 0%);
+  --color-base--black: hsl(0, 0%, 0%);
+  --color-base--black-soft: hsl(0, 0%, 0%);
+  --color-base--black-mute: hsl(0, 0%, 0%);
+
+  --color-base--blue-soft-2: hwb(207 65% 16%);
+  --color-base--blue-soft-1: hwb(207 40% 16%);
+  --color-base--blue: #0f7dd6;
+  --color-base--blue-mute-1: hsl(207, 49%, 48%);
+  --color-base--blue-mute-2: #7a91bc;
+
+  --color-base--green-soft-2: hsl(0, 0%, 0%);
+  --color-base--green-soft-1: hsl(0, 0%, 0%);
+  --color-base--green: hsl(0, 0%, 0%);
+  --color-base--green-mute-1: hsl(0, 0%, 0%);
+  --color-base--green-mute-2: hsl(0, 0%, 0%);
+
+  --color-base--yellow-soft-2: hsl(0, 0%, 0%);
+  --color-base--yellow-soft-1: hsl(0, 0%, 0%);
+  --color-base--yellow: hsl(0, 0%, 0%);
+  --color-base--yellow-mute-1: hsl(0, 0%, 0%);
+  --color-base--yellow-mute-2: hsl(0, 0%, 0%);
+
+  --color-base--red-soft-2: hsl(0, 0%, 0%);
+  --color-base--red-soft-1: hsl(0, 0%, 0%);
+  --color-base--red: hsl(0, 0%, 0%);
+  --color-base--red-mute-1: hsl(0, 0%, 0%);
+  --color-base--red-mute-2: hsl(0, 0%, 0%);
+}
+
+/* semantic color variables for this project */
+:root {
+  --color--background: var(--color-base--white);
+  --color--surface: var(--color-base--white);
+  --color--surface-variant: var(--color-base--white);
+
+  --color--outline: var(--color-base--gray-light-3);
+
+  --color--text-1: var(--color-base--black-pure);
+  --color--text-2: var(--color-base--black-mute);
+  --color--text-3: var(--color-base--gray-dark-4);
+  --color--text-4: var(--color-base--gray-dark-3);
+
+  --color--primary: var(--color-base--blue);
+  --color--primary-on: var(--color-base--blue-mute-2);
+  --color--primary-surface: var(--color-base--blue-soft-1);
+  --color--primary-surface-on: var(--color-base--blue-mute-1);
+}
+
+@media (prefers-color-scheme: dark) {
+}
