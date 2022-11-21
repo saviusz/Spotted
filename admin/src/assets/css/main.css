@@ -1,0 +1,21 @@
+@import "./base.css";
+@import "./visual/index.css";
+
+#app {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  display: grid;
+  grid-template-columns: 3rem calc(25% - 3rem) 1fr;
+  grid-template-rows: 1fr;
+
+  grid-template-areas: "side side main";
+
+  gap: 16px;
+  padding: 16px;
+
+  font-weight: normal;
+}

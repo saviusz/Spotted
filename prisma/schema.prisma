@@ -1,0 +1,117 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "generated"
+}
+
+generator graph {
+  provider = "prisma-dbml-generator"
+}
+
+generator classes {
+  provider = "prisma-class-generator"
+  output   = "./classes"
+}
+
+datasource db {
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
+}
+
+model Community {
+  id              Int      @id
+  link            String?  @unique
+  displayName     String
+  onlineProfiles  String[]
+  ruleSet         Json?
+  disallowedWords String[]
+  createdAt       DateTime @default(now())
+
+  owner   User            @relation(fields: [ownerId], references: [id])
+  ownerId Int
+  users   CommunityUser[]
+  authors Author[]
+  posts   Post[]
+}
+
+model CommunityUser {
+  community   Community @relation(fields: [communityId], references: [id])
+  communityId Int
+  user        User      @relation(fields: [userId], references: [id])
+  userId      Int
+
+  createdAt DateTime @default(now())
+
+  @@id([communityId, userId])
+}
+
+model User {
+  id Int @id
+
+  email        String?
+  passwordHash String?
+  createdAt    DateTime @default(now())
+
+  ownedCommunities Community[]
+  communities      CommunityUser[]
+  RefreshTokens    RefreshToken[]
+  ownedAuthors     Author[]
+}
+
+model Author {
+  id          Int      @id
+  displayName String
+  imageUrl    String?
+  createdAt   DateTime @default(now())
+
+  owner       User?      @relation(fields: [userId], references: [id])
+  userId      Int?
+  community   Community? @relation(fields: [communityId], references: [id])
+  communityId Int?
+  Post        Post[]
+}
+
+enum PostType {
+  text
+  image
+  reflink
+}
+
+model Post {
+  id            BigInt   @id
+  type          PostType
+  content       String
+  description   String
+  savedImageURL String
+
+  author      Author?    @relation(fields: [authorId], references: [id])
+  authorId    Int?
+  community   Community? @relation(fields: [communityId], references: [id])
+  communityId Int?
+}
+
+model Story {
+  id       Int      @id
+  type     PostType
+  content  String
+  videoURL String
+}
+
+model RefreshToken {
+  user         User     @relation(fields: [userId], references: [id])
+  userId       Int
+  id           Int      @id
+  description  String?
+  accessPoint  String
+  createdAt    DateTime @default(now())
+  expireDate   DateTime
+  refreshToken String   @unique
+}
+
+model runningInstances {
+  id           Int      @id @default(sequence())
+  createdAt    DateTime @default(now())
+  lastHearBeat DateTime
+}

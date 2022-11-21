@@ -1,6 +1,6 @@
 :root {
   --color-base--white-pure: #ffffff;
-  --color-base--white: #ffffff;
+  --color-base--white: #f6f2f2;
   --color-base--white-soft: #ffffff;
   --color-base--white-mute: #ffffff;
 
@@ -54,13 +54,56 @@
 
   --color--text-1: var(--color-base--black-pure);
   --color--text-2: var(--color-base--black-mute);
-  --color--text-3: var(--color-base--gray-dark-4);
+  --color--text-3: var(--coloonr-base--gray-dark-4);
   --color--text-4: var(--color-base--gray-dark-3);
 
   --color--primary: var(--color-base--blue);
-  --color--primary-on: var(--color-base--blue-mute-2);
+  --color--primary-on: var(--color-base--white-pure);
   --color--primary-surface: var(--color-base--blue-soft-1);
-  --color--primary-surface-on: var(--color-base--blue-mute-1);
+  --color--primary-surface-on: var(--color-base--gray-light-1);
+
+  --gradient--primary: linear-gradient(
+    55deg,
+    #3b8ab5,
+    hsl(-75, 98%, 55%),
+    #fc45bf
+  );
+  --gradient--primary: linear-gradient(
+    45deg,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d
+  );
+  --gradient--primary: radial-gradient(
+    ellipse at -20% 120%,
+    #3b8ab5,
+    #3a8ac2,
+    #5d86db,
+    #a775e3,
+    #e557cf,
+    #fc45bf
+  );
+  --gradient--primary: radial-gradient(
+    ellipse at -20% 120%,
+    #5433ff,
+    #0064ff,
+    #00a3ff,
+    #00d4f2,
+    #61f3ce,
+    #a5fecb
+  );
+  --gradient--primary: radial-gradient(
+    ellipse at -20% 120%,
+    #9796f0,
+    #ac98ec,
+    #d2a0e1,
+    #edafd7,
+    #f8bfd3,
+    #fbc7d4
+  );
 }
 
 @media (prefers-color-scheme: dark) {

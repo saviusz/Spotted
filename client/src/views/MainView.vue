@@ -5,10 +5,10 @@
       <img src="@/assets/image.png" alt="" />
       <textarea name="" id="" cols="30" rows="10"></textarea>
       <div class="buttons">
-        <sButton icon="ph:caret-down" icon-pos="after">{{
+        <sButton priority="low" icon="ph:caret-down" icon-pos="after" class="more_options">{{
           $t("universal.show_more_options")
         }}</sButton>
-        <sButton class="full">{{ $t("posting.send") }}</sButton>
+        <sButton priority="high" icon="ph:envelope" icon-pos="after"  class="send">{{ $t("posting.send") }}</sButton>
       </div>
     </div>
   </section>
@@ -41,8 +41,15 @@ import sButton from "../components/Button.vue";
 
     gap: 0.3em;
 
-    .full {
-      flex: 1;
+    margin-inline: var(--margin--normal);
+
+    .more_options{
+      flex-grow: 1;
+    }
+
+    .send {
+      flex-shrink: 0;
+      flex-grow: 1;
     }
 
     > * {

@@ -1,0 +1,10 @@
+.panel {
+  background-color: var(--color--surface);
+  border-radius: var(--roundness);
+
+  padding: 8px;
+}
+
+.panel.hoverable:hover {
+  background-color: var(--color--surface-variant);
+}

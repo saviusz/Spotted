@@ -1,0 +1,11 @@
+{
+  "extends": [
+    "stylelint-config-recommended-scss",
+    "stylelint-config-prettier",
+    "stylelint-config-recommended-vue/scss"
+  ],
+  "rules": {
+    "color-hex-case": "lower",
+    "color-hex-length": "long"
+  }
+}

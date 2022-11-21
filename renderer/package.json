@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/main.js",
-  "types": "dist/renderer/src/main.d.ts",
+  "types": "types/main.d.ts",
   "scripts": {
     "build": "tsc",
     "install": "npm run build"

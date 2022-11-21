@@ -1,0 +1,199 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --color-base--white-pure: #ffffff;
+  --color-base--white: #f6f2f2;
+  --color-base--white-soft: #ffffff;
+  --color-base--white-mute: #ffffff;
+
+  --color-base--gray-light-1: #e6e6e6;
+  --color-base--gray-light-2: hsl(0, 0%, 80%);
+  --color-base--gray-light-3: hsl(0, 0%, 70%);
+  --color-base--gray-light-4: hsl(0, 0%, 60%);
+  --color-base--gray: hsl(0, 0%, 50%);
+  --color-base--gray-dark-4: hsl(0, 0%, 40%);
+  --color-base--gray-dark-3: hsl(0, 0%, 30%);
+  --color-base--gray-dark-2: hsl(0, 0%, 20%);
+  --color-base--gray-dark-1: hsl(0, 0%, 10%);
+
+  --color-base--black-pure: hsl(0, 0%, 0%);
+  --color-base--black: hsl(0, 0%, 0%);
+  --color-base--black-soft: hsl(0, 0%, 3%);
+  --color-base--black-mute: hsl(0, 0%, 9%);
+
+  --color-base--blue-soft-2: hwb(207 65% 16%);
+  --color-base--blue-soft-1: hwb(207 40% 16%);
+  --color-base--blue: #0f7dd6;
+  --color-base--blue-mute-1: hsl(207, 49%, 48%);
+  --color-base--blue-mute-2: #7a91bc;
+
+  --color-base--green-soft-2: hsl(0, 0%, 0%);
+  --color-base--green-soft-1: hsl(0, 0%, 0%);
+  --color-base--green: hsl(0, 0%, 0%);
+  --color-base--green-mute-1: hsl(0, 0%, 0%);
+  --color-base--green-mute-2: hsl(0, 0%, 0%);
+
+  --color-base--yellow-soft-2: hsl(0, 0%, 0%);
+  --color-base--yellow-soft-1: hsl(0, 0%, 0%);
+  --color-base--yellow: hsl(0, 0%, 0%);
+  --color-base--yellow-mute-1: hsl(0, 0%, 0%);
+  --color-base--yellow-mute-2: hsl(0, 0%, 0%);
+
+  --color-base--red-soft-2: hsl(0, 0%, 0%);
+  --color-base--red-soft-1: hsl(0, 0%, 0%);
+  --color-base--red: hsl(0, 0%, 0%);
+  --color-base--red-mute-1: hsl(0, 0%, 0%);
+  --color-base--red-mute-2: hsl(0, 0%, 0%);
+}
+
+/* semantic color variables for this project */
+:root {
+  --color--background: var(--color-base--gray-light-1);
+  --color--surface: var(--color-base--white);
+  --color--surface-variant: var(--color-base--white-soft);
+
+  --color--outline: var(--color-base--gray-light-3);
+
+  --color--text-1: var(--color-base--black-pure);
+  --color--text-2: var(--color-base--black-mute);
+  --color--text-3: var(--coloonr-base--gray-dark-4);
+  --color--text-4: var(--color-base--gray-dark-3);
+
+  --color--primary: var(--color-base--blue);
+  --color--primary-on: var(--color-base--white-pure);
+  --color--primary-surface: var(--color-base--blue-soft-1);
+  --color--primary-surface-on: var(--color-base--gray-light-1);
+
+  --gradient--primary: linear-gradient(
+    55deg,
+    #3b8ab5,
+    hsl(-75, 98%, 55%),
+    #fc45bf
+  );
+  --gradient--primary: linear-gradient(
+    45deg,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d
+  );
+  --gradient--primary: radial-gradient(
+    ellipse at -20% 120%,
+    #3b8ab5,
+    #3a8ac2,
+    #5d86db,
+    #a775e3,
+    #e557cf,
+    #fc45bf
+  );
+  --gradient--primary: radial-gradient(
+    ellipse at -20% 120%,
+    #5433ff,
+    #0064ff,
+    #00a3ff,
+    #00d4f2,
+    #61f3ce,
+    #a5fecb
+  );
+  --gradient--primary: radial-gradient(
+    ellipse at -20% 120%,
+    #9796f0,
+    #ac98ec,
+    #d2a0e1,
+    #edafd7,
+    #f8bfd3,
+    #fbc7d4
+  );
+
+  --roundness: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color--background: var(--color-base--black);
+    --color--surface: var(--color-base--black-soft);
+    --color--surface-variant: var(--color-base--black-mute);
+
+    --color--outline: var(--color-base--gray-dark-1);
+
+    --color--text-1: var(--color-base--white-pure);
+    --color--text-2: var(--color-base--white-mute);
+    --color--text-3: var(--color-base--gray-light-4);
+    --color--text-4: var(--color-base--gray-light-3);
+
+    --color--primary: var(--color-base--blue);
+    --color--primary-on: var(--color-base--white-pure);
+    --color--primary-surface: var(--color-base--blue-soft-1);
+    --color--primary-surface-on: var(--color-base--gray-light-1);
+
+    --gradient--primary: linear-gradient(
+      55deg,
+      #3b8ab5,
+      hsl(-75, 98%, 55%),
+      #fc45bf
+    );
+    --gradient--primary: linear-gradient(
+      45deg,
+      #405de6,
+      #5851db,
+      #833ab4,
+      #c13584,
+      #e1306c,
+      #fd1d1d
+    );
+    --gradient--primary: radial-gradient(
+      ellipse at -20% 120%,
+      #3b8ab5,
+      #3a8ac2,
+      #5d86db,
+      #a775e3,
+      #e557cf,
+      #fc45bf
+    );
+    --gradient--primary: radial-gradient(
+      ellipse at -20% 120%,
+      #5433ff,
+      #0064ff,
+      #00a3ff,
+      #00d4f2,
+      #61f3ce,
+      #a5fecb
+    );
+    --gradient--primary: radial-gradient(
+      ellipse at -20% 120%,
+      #9796f0,
+      #ac98ec,
+      #d2a0e1,
+      #edafd7,
+      #f8bfd3,
+      #fbc7d4
+    );
+
+    --roundness: 10px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color--text-1);
+  background: var(--color--background);
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

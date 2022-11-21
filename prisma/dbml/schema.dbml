@@ -1,0 +1,111 @@
+//// ------------------------------------------------------
+//// THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+//// ------------------------------------------------------
+
+Table Community {
+  id Int [pk]
+  link String [unique]
+  displayName String [not null]
+  onlineProfiles String[] [not null]
+  ruleSet Json
+  disallowedWords String[] [not null]
+  createdAt DateTime [default: `now()`, not null]
+  owner User [not null]
+  ownerId Int [not null]
+  users CommunityUser [not null]
+  authors Author [not null]
+  posts Post [not null]
+}
+
+Table CommunityUser {
+  community Community [not null]
+  communityId Int [not null]
+  user User [not null]
+  userId Int [not null]
+  createdAt DateTime [default: `now()`, not null]
+
+  indexes {
+    (communityId, userId) [pk]
+  }
+}
+
+Table User {
+  id Int [pk]
+  email String
+  passwordHash String
+  createdAt DateTime [default: `now()`, not null]
+  ownedCommunities Community [not null]
+  communities CommunityUser [not null]
+  RefreshTokens RefreshToken [not null]
+  ownedAuthors Author [not null]
+}
+
+Table Author {
+  id Int [pk]
+  displayName String [not null]
+  imageUrl String
+  createdAt DateTime [default: `now()`, not null]
+  owner User
+  userId Int
+  community Community
+  communityId Int
+  Post Post [not null]
+}
+
+Table Post {
+  id BigInt [pk]
+  type PostType [not null]
+  content String [not null]
+  description String [not null]
+  savedImageURL String [not null]
+  author Author
+  authorId Int
+  community Community
+  communityId Int
+}
+
+Table Story {
+  id Int [pk]
+  type PostType [not null]
+  content String [not null]
+  videoURL String [not null]
+}
+
+Table RefreshToken {
+  user User [not null]
+  userId Int [not null]
+  id Int [pk]
+  description String
+  accessPoint String [not null]
+  createdAt DateTime [default: `now()`, not null]
+  expireDate DateTime [not null]
+  refreshToken String [unique, not null]
+}
+
+Table runningInstances {
+  id Int [pk]
+  createdAt DateTime [default: `now()`, not null]
+  lastHearBeat DateTime [not null]
+}
+
+Enum PostType {
+  text
+  image
+  reflink
+}
+
+Ref: Community.ownerId > User.id
+
+Ref: CommunityUser.communityId > Community.id
+
+Ref: CommunityUser.userId > User.id
+
+Ref: Author.userId > User.id
+
+Ref: Author.communityId > Community.id
+
+Ref: Post.authorId > Author.id
+
+Ref: Post.communityId > Community.id
+
+Ref: RefreshToken.userId > User.id

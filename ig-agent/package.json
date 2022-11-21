@@ -13,7 +13,7 @@
   "dependencies": {
     "dotenv": "^16.0.0",
     "file-type": "^17.1.1",
-    "instagram-private-api": "^1.45.3",
+    "instagram-private-api": "github:Hipnosis183/instagram-private-api",
     "node-ipc": "^9.2.0",
     "re2": "^1.17.4"
   },
